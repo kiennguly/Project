@@ -13,7 +13,7 @@ This project documents a practical AWS web architecture where:
 - **DNS & routing** is managed using **Amazon Route 53** for clean domain mapping (e.g., `app.example.com`).
 
 This setup is widely used for real products: marketing sites + SPA frontends, admin dashboards, and scalable REST APIs.
-
+![Architecture](project6.png)
 ---
 
 ## 2. High-Level Architecture
@@ -241,18 +241,3 @@ Backend:
 - Multi-tenant SaaS frontend + service layer
 
 ---
-
-## 11. Appendix: Mermaid Diagram (Optional)
-
-```mermaid
-flowchart LR
-  U[User / Browser] -->|DNS| R53[Route 53]
-  R53 -->|Alias| CF[CloudFront]
-  WAF[AWS WAF] -. attached .- CF
-  CF -->|/*| S3[(S3 Static Assets - Private)]
-  CF -. OAC .-> S3
-  CF -->|/api/*| ALB[ALB]
-  ALB --> TG[(Target Group)]
-  TG --> ASG[EC2 Auto Scaling]
-  ASG --> EC2A[(EC2 A)]
-  ASG --> EC2B[(EC2 B)]
