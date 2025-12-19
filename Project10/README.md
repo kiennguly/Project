@@ -1,8 +1,7 @@
 # Architecture: Minimum Initialization Latency with EBS Fast Snapshot Restore
-
+![Architecture](project10.png)
 ## 1. Problem Context and Objective
 The workload experiences sudden demand spikes and must launch large Amazon EC2 instances from an Amazon Machine Image (AMI) inside an Auto Scaling group (ASG).
-
 * **Key Requirement:** Minimum initialization latency (ready-to-serve as quickly as possible).
 * **The Bottleneck:** Traditional EBS volume initialization from snapshots relies on **lazy loading**, which causes significant "time-to-ready" delays during scale-out.
 
