@@ -49,7 +49,6 @@ The core idea is to keep the same domain for customers and split production traf
 # AWS API Gateway Canary Release Strategy
 
 ![Architecture](project14.png)
-This document outlines the architecture, benefits, and step-by-step operational procedures for implementing a Canary Release strategy using Amazon API Gateway.
 
 ---
 
