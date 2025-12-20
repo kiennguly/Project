@@ -7,9 +7,9 @@
 
 This document describes the architecture and migration approach for moving an on-premises PostgreSQL database to Amazon Aurora PostgreSQL while ensuring:
 
-- ✅ The on-premises database remains online and accessible  
-- ✅ The Aurora database stays continuously synchronized  
-- ✅ Zero or near-zero downtime during migration  
+- The on-premises database remains online and accessible  
+- The Aurora database stays continuously synchronized  
+- Zero or near-zero downtime during migration  
 
 The solution leverages AWS Database Migration Service (AWS DMS) with ongoing replication (Change Data Capture – CDC).
 
@@ -44,7 +44,7 @@ The solution leverages AWS Database Migration Service (AWS DMS) with ongoing rep
 
 ---
 
-### 4.2 AWS DMS Replication Instance (Answer C)
+### 4.2 AWS DMS Replication Instance
 - Managed compute instance that runs DMS replication tasks
 - Handles:
   - Source and target database connections
@@ -56,7 +56,7 @@ The solution leverages AWS Database Migration Service (AWS DMS) with ongoing rep
 
 ---
 
-### 4.3 AWS DMS Ongoing Replication Task (Answer A)
+### 4.3 AWS DMS Ongoing Replication Task
 - Migration type: Full load + ongoing replication
 - Responsibilities:
   - Perform a one-time initial data copy
