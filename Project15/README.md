@@ -4,7 +4,7 @@
 ## 1. Pilot Light (Hybrid)
 ### Pilot Light Flow
  ![Architecture](project15.1.png)
-### 2.1 Cách hoạt động
+### 1.1 Cách hoạt động
 * **Trạng thái bình thường:** On-Prem: Chạy toàn bộ ứng dụng và Database (Prod), phục vụ người dùng 100%.
     * **AWS:** Chỉ duy trì các thành phần "lõi" (Pilot Light). Database replica hoặc standby luôn chạy để đồng bộ dữ liệu. Các tài nguyên Compute (EC2/EKS) ở trạng thái tắt hoặc số lượng cực nhỏ.
 * **Khi xảy ra sự cố (Failover):**
@@ -12,7 +12,7 @@
     2.  **Compute:** Kích hoạt script tự động (IaC) để bật hoặc scale-out App Tier (từ gần như "0" lên đủ tải).
     3.  **Network:** Route 53 thực hiện failover chuyển traffic sang AWS.
 
-### 2.2 Ưu điểm & Hạn chế
+### 1.2 Ưu điểm & Hạn chế
 * **Lợi ích:** Chi phí duy trì cực thấp vì không tốn tiền cho Compute chạy không tải. Data luôn sẵn sàng, giảm thiểu rủi ro mất dữ liệu (RPO thấp).
 * **Phù hợp:** Các hệ thống có ngân sách hạn chế và chấp nhận thời gian chờ (RTO) ở mức trung bình để đợi ứng dụng khởi động.
 
